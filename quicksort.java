@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class quicksort {
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -20,28 +20,22 @@ public class Main {
         }
     }
 
-    public static int partition(int arr[], int low, int high) {
-        int t = arr[low];
-        int i = low + 1;
-        int j = high;
-        while (i <= j) {
-            while (i <= j && arr[i] < t) {
+    public static int partition(int[] arr, int l, int h) {
+        int pivot = arr[h];
+        int i = l - 1;
+        for (int j = l; j < h; j++) {
+            if (arr[j] < pivot) {
                 i++;
-            }
-            while (i <= j && arr[j] > t) {
-                j--;
-            }
-            if (i <= j) {
-                int s = arr[i];
-                arr[i] = arr[j];
-                arr[j] = s;
-                i++;
-                j--;
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
-        int z = arr[low];
-        arr[low] = arr[j];
-        arr[j] = z;
-        return j;
+        int temp = arr[h];
+        arr[h] = arr[i + 1];
+        arr[i + 1] = temp;
+        System.out.println(Arrays.toString(arr));
+
+        return i + 1;
     }
 }
