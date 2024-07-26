@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main{
+public class InsertionSort{
     public static void main(String h[])
     {
         Scanner sc=new Scanner(System.in);
@@ -9,9 +9,10 @@ public class Main{
         {
             a[i]=sc.nextInt();
         }
-        Insertionsort(n,a);
+        insertionSort(n,a);
+        sc.close();
     }
-    public static int[] Insertionsort(int k,int arr[])
+    public static int[] insertionSort(int k,int arr[])
     {
         for(int i=1;i<k;i++)
         {

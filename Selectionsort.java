@@ -8,11 +8,12 @@ public class Selectionsort {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        Selectionsort(n, a);
+        selectionsort(n, a);
         System.out.print(Arrays.toString(a));
+        sc.close();
     }
 
-    public static int[] Selectionsort(int k, int arr[]) {
+    public static int[] selectionsort(int k, int arr[]) {
         for (int i = 0; i < k; i++) {
             int t = i;
             for (int j = i + 1; j < k; j++) {
