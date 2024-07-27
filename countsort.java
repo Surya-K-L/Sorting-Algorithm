@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class CountSort {
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -12,6 +12,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             System.out.print(output[i] + " ");
         }
+        sc.close();
     }
 
     public static int[] Countsort(int arr[]) {

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class MergeSort {
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -10,6 +10,7 @@ public class Main {
         }
         mergeSort(a, 0, n - 1);
         System.out.print(Arrays.toString(a));
+        sc.close();
     }
 
     public static void mergeSort(int arr[], int l, int h) {

@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main{
+public class BubbleSort{
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -8,6 +8,7 @@ public class Main{
             a[i] = sc.nextInt();
         }
         Bubblesort(n, a);
+        sc.close();
     }
 
     public static int[] Bubblesort(int k, int arr[]) {

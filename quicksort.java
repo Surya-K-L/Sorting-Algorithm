@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class QuickSort {
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -8,40 +8,35 @@ public class Main {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        Quicksort(a, 0, n - 1);
+        quickSort(a, 0, n - 1);
         System.out.print(Arrays.toString(a));
+        sc.close();
     }
 
-    public static void Quicksort(int arr[], int low, int high) {
+    public static void quickSort(int arr[], int low, int high) {
         if (low < high) {
             int mid = partition(arr, low, high);
-            partition(arr, low, mid - 1);
-            partition(arr, mid + 1, high);
+            quickSort(arr, low, mid - 1);
+            quickSort(arr, mid + 1, high);
         }
     }
 
-    public static int partition(int arr[], int low, int high) {
-        int t = arr[low];
-        int i = low + 1;
-        int j = high;
-        while (i <= j) {
-            while (i <= j && arr[i] < t) {
+    public static int partition(int[] arr, int l, int h) {
+        int pivot = arr[h];
+        int i = l - 1;
+        for (int j = l; j < h; j++) {
+            if (arr[j] < pivot) {
                 i++;
-            }
-            while (i <= j && arr[j] > t) {
-                j--;
-            }
-            if (i <= j) {
-                int s = arr[i];
-                arr[i] = arr[j];
-                arr[j] = s;
-                i++;
-                j--;
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
-        int z = arr[low];
-        arr[low] = arr[j];
-        arr[j] = z;
-        return j;
+        int temp = arr[h];
+        arr[h] = arr[i + 1];
+        arr[i + 1] = temp;
+        System.out.println(Arrays.toString(arr));
+
+        return i + 1;
     }
 }
