@@ -3,11 +3,11 @@ public class BubbleSort{
     public static void main(String h[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int a[] = new int[n];
+        int arr[] = new int[n];
         for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
+            arr[i] = sc.nextInt();
         }
-        Bubblesort(n, a);
+        Bubblesort(n, arr);
         sc.close();
     }
 
